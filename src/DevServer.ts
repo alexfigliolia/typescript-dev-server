@@ -12,10 +12,10 @@ export class DevServer {
   }
 
   private static readonly defaults = {
-    color: "magentaBright",
     nodeOptions: {},
     killCommands: {},
     serviceCommands: {},
+    color: "magentaBright",
     tsconfig: "./tsconfig.json",
   };
 
@@ -38,11 +38,11 @@ export class DevServer {
       this.TSX = CP;
       return handler;
     } catch (error) {
-      await this.killAll();
+      await this.stop();
     }
   }
 
-  private async killAll() {
+  public async stop() {
     if (this.TSX) {
       this.TSX.kill();
       this.TSX = undefined;
@@ -51,9 +51,9 @@ export class DevServer {
   }
 
   private listenForKills() {
-    process.on("exit", () => void this.killAll());
-    process.on("SIGINT", () => void this.killAll());
-    process.on("SIGTERM", () => void this.killAll());
+    process.on("exit", () => void this.stop());
+    process.on("SIGINT", () => void this.stop());
+    process.on("SIGTERM", () => void this.stop());
   }
 
   private async bootServices() {

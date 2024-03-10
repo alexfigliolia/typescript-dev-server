@@ -12,38 +12,44 @@ yarn add -D @figliolia/typescript-dev-server
 ```typescript
 import { DevServer } from "@figliolia/typescript-dev-server";
 
-const Server = new DevServer({
-  entryPoint: "src/index.ts",
-});
+(async () => {
+  const Server = new DevServer({
+    entryPoint: "src/index.ts",
+  });
+  await Server.run();
+})().catch(console.log);
 ```
 
 ### Advanced Usage
 ```typescript
 import { DevServer } from "@figliolia/typescript-dev-server";
 
-const Server = new DevServer({
-  entryPoint: "src/index.ts",
-  // An optional custom path to your tsconfig for development 
-  tsconfig: "path/to/yourTsconfig.json",
-  // A color for your dev server's stdout logs
-  color: "magenta",
-  // Environment variables to pass to your node.js runtime
-  nodeOptions: {
-    NODE_ENV: "development",
-    NODE_OPTIONS: "--enable-source-maps"
-  },
-  // Auxiliary services to start with your dev server
-  serviceCommands: {
-    Redis: "brew services start redis",
-    Postgres: "brew services start postgresql@16",
-  },
-  // Commands to shut down auxiliary services when your
-  // server stops
-  killCommands: {
-    Redis: "brew services stop redis",
-    Postgres: "brew services stop postgresql@16",
-  }
-});
+(async () => {
+  const Server = new DevServer({
+    entryPoint: "src/index.ts",
+    // An optional custom path to your tsconfig for development 
+    tsconfig: "path/to/yourTsconfig.json",
+    // A color for your dev server's stdout logs
+    color: "magenta",
+    // Environment variables to pass to your node.js runtime
+    nodeOptions: {
+      NODE_ENV: "development",
+      NODE_OPTIONS: "--enable-source-maps"
+    },
+    // Auxiliary services to start with your dev server
+    serviceCommands: {
+      Redis: "brew services start redis",
+      Postgres: "brew services start postgresql@16",
+    },
+    // Commands to shut down auxiliary services when your
+    // server stops
+    killCommands: {
+      Redis: "brew services stop redis",
+      Postgres: "brew services stop postgresql@16",
+    }
+  });
+  await Server.run();
+}).catch(console.log);
 ```
 
 ### Running your Dev Server
