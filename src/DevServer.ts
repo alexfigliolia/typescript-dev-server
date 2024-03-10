@@ -57,13 +57,17 @@ export class DevServer {
   }
 
   private async bootServices() {
-    this.logServiceAction("Booting");
-    return Promise.all(this.services.map(c => new ChildProcess(c).handler));
+    if (this.services.length) {
+      this.logServiceAction("Booting");
+      return Promise.all(this.services.map(c => new ChildProcess(c).handler));
+    }
   }
 
   private killServices() {
-    this.logServiceAction("Killing");
-    return Promise.all(this.kills.map(c => ChildProcess.execute(c)));
+    if (this.kills.length) {
+      this.logServiceAction("Killing");
+      return Promise.all(this.kills.map(c => ChildProcess.execute(c)));
+    }
   }
 
   private get services() {
