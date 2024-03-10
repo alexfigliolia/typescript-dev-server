@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/typescript-dev-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small development server for typescript projects",
   "license": "ISC",
   "author": "Alex Figliolia",
