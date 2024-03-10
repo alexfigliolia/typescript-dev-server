@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import Chalk from "chalk";
 import type { ChildProcess as CP } from "child_process";
 import process from "process";
 import type { IOptions } from "types";
@@ -81,6 +81,6 @@ export class DevServer {
   }
 
   private log(...messages: string[]) {
-    console.log(chalk[this.options.color].bold("Dev Server:"), ...messages);
+    console.log(Chalk[this.options.color].bold("Dev Server:"), ...messages);
   }
 }

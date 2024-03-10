@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/typescript-dev-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small development server for typescript projects",
   "license": "ISC",
   "author": "Alex Figliolia",
@@ -20,7 +20,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "chalk": "^5.3.0"
+    "chalk": "^4"
   },
   "devDependencies": {
     "@figliolia/child-process": "^1.0.3",
