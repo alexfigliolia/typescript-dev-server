@@ -53,4 +53,4 @@ import { DevServer } from "@figliolia/typescript-dev-server";
 ```
 
 ### Running your Dev Server
-To run your dev server, you can simply run `node path/to/yourDevServer.ts`. If you're writing your dev server in typescript, you can choose to compile and run it using `tsc` and `node` or opt for an all-in-one solution such as `ts-node`.
+To run your dev server, you can simply run `node path/to/yourDevServer.js`. If you're writing your dev server in typescript, you can compile and run it using `tsc` and `node` or opt for an all-in-one solution such as `ts-node` or `tsx`.
