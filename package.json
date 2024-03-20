@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/typescript-dev-server",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A small development server for typescript projects",
   "license": "ISC",
   "author": "Alex Figliolia",
@@ -16,7 +16,7 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "npx ts-packager -e src/index.ts",
-    "lint": "ts-node ci/commands/Lint.ts",
+    "lint": "tsx ci/commands/Lint.ts",
     "test": "jest"
   },
   "dependencies": {
