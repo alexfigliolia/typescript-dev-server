@@ -1,5 +1,5 @@
 # Typescript Dev Server
-A lightweight development server for typescript projects. The server will watch your files and reboot on changes and allow you to boot/kill auxiliary services used by your development workflow.
+A lightweight development server for typescript projects. The server will watch your files, reboot on changes, and allow you to run auxiliary services used by your development workflow.
 
 ## Installation
 ```bash
